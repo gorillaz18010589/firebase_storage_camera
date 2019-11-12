@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "782903398984",
+    "firebase_url": "https://fir-storagecamera-b22c8.firebaseio.com",
+    "project_id": "fir-storagecamera-b22c8",
+    "storage_bucket": "fir-storagecamera-b22c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782903398984:android:f9dc92bdd0b9a73b857e7d",
+        "android_client_info": {
+          "package_name": "tw.org.iii.appps.firebase_storage_camera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782903398984-ic67cvbhg55hkdauvg5rlfr30qr3a8dq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tw.org.iii.appps.firebase_storage_camera",
+            "certificate_hash": "aa950d09e3530bccda8eaa3741a1f1a73face127"
+          }
+        },
+        {
+          "client_id": "782903398984-f8d58v5i5ude8a1drf35dh46pq3j0h41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk_WEiaTJVLQhcMNyIERpPEp8zAmLk-t0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782903398984-f8d58v5i5ude8a1drf35dh46pq3j0h41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
