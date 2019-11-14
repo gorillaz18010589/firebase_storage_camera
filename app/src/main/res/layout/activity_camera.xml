@@ -12,49 +12,67 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="test1"
-        android:text="test1"
+        android:text="VibrationEffect_createOneShot"
+        android:textAllCaps="false"
         />
 
     <Button
-        android:text="test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="test2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="vibratePatten"
+        android:textAllCaps="false"
         />
 
     <Button
-        android:text="test3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="test3"
+        android:text="Intent.MediaStore.ACTION_IMAGE_CAPTURE"
+        android:textAllCaps="false"
+        />
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
-    
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/fSwitch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btn_setValue"
-        android:text="送Camera物件"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
-    <Button
         android:onClick="test4"
-        android:text="IntentCamera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="Intent_Camera_getUriForFile"
+        android:textAllCaps="false"
+        />
 
     <Button
-        android:onClick="test5"
-        android:text="FileProvider_camera"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="test5"
+        android:text="test5"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="test6"
+        android:text="VibrationEffect_CreateWaveform"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnAddFirebase"
+        android:text="addFirebase"
+        android:textAllCaps="false"
+        />
+
+
 
     <ImageView
-        android:id="@+id/camera_img"
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/fswitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

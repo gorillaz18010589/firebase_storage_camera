@@ -2,5 +2,5 @@
 <!-- path="." /> sd下底下的根所以用.-->
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
     <external-path name="my_images"
-        path="." />
+        path="DCIM/Camera" />
 </paths>

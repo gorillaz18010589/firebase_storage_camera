@@ -13,6 +13,20 @@
        android:text="Camera"
        android:layout_width="match_parent"
        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="captureVideo"
+        android:onClick="captureVideoBtn"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="playVideoBtn"
+        android:text="playVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/page2_btn"
         android:text="to page2"
@@ -21,6 +35,11 @@
 
     <ImageView
         android:id="@+id/camera_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <VideoView
+        android:id="@+id/main_video"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
