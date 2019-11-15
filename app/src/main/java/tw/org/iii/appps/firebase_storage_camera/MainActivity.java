@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                    mDialog.dismiss();
 
-                   //上傳檔案下載成功時
+                   //照片上傳檔案下載成功時,顯示出來
                    filepath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                        @Override
                        public void onSuccess(Uri uri) {
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                        }
                    });
 
-                   Toast.makeText(MainActivity.this,"上傳成功",Toast.LENGTH_SHORT).show();
+                   Toast.makeText(MainActivity.this,"圖片上傳成功",Toast.LENGTH_SHORT).show();
                    Log.v("brad","onSuccess,taskSnapsoht:" + taskSnapshot.toString());
                }
            })
@@ -154,8 +154,42 @@ public class MainActivity extends AppCompatActivity {
         }
         //接受錄影程式,取得錄影的uri,顯示出來
         else if(requestCode == VIDEO_REQUEST && resultCode == RESULT_OK){
-            videoView.setVideoURI(videoUri);
-            videoView.start();
+            mDialog.setMessage("Upload..");
+            mDialog.show();
+            Log.v("brad","onActivityResult=> requestCode:" +requestCode +" ,resultCode:" + resultCode +" ,uri:" + videoUri);
+
+            String imageName = UUID.randomUUID().toString();
+
+            final StorageReference filepath = mStorage.child("images/" + imageName);
+
+            //影片檔案上傳成功時
+            filepath.putFile(videoUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    mDialog.dismiss();
+
+                    //上傳影片下載成功時,播放影片
+                    filepath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            videoView.setVideoURI(uri);
+                            videoView.start();
+                            Log.v("brad","getDownloadrUrl.onSuccess => uri:" + uri);
+                        }
+                    });
+
+                    Toast.makeText(MainActivity.this,"影片上傳成功",Toast.LENGTH_SHORT).show();
+                    Log.v("brad","onSuccess,taskSnapsoht:" + taskSnapshot.toString());
+                }
+            })
+                    //檔案下載失敗時:
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.v("brad","OnFailureListner:" + e.toString());
+                        }
+                    });
+
             Log.v("brad","onActivityResult => videoUri:" + videoUri);
         }
     }
@@ -191,11 +225,11 @@ public class MainActivity extends AppCompatActivity {
             Log.v("brad","captureVideoBtn => PackgetManager:" + getPackageManager().toString());
         }
     }
-    //4.將取得的VideoUri送到第二頁作呈現
+    //4.將取得的VideoUri送到第二頁作呈現,待用
     public void playVideoBtn(View view) {
-        Intent playIntent = new Intent(MainActivity.this,PlayVideoActivity.class);
-        playIntent.putExtra("videoUri",videoUri);
-        startActivity(playIntent);
+//        Intent playIntent = new Intent(MainActivity.this,PlayVideoActivity.class);
+//        playIntent.putExtra("videoUri",videoUri);
+//        startActivity(playIntent);
     }
 
 
